@@ -1,13 +1,35 @@
 public class Basket {
     private   String items = "";
     private int totalPrice = 0;
+    private int limit;
+
+
+
+    public Basket(){
+        items = "Список товаров";
+        limit = 99999999;
+    }
+
+    public  Basket(int limit){
+        this();
+        this.limit = limit;
+    }
+
+    public Basket(String items, int totalPrice){
+      this();
+      add(items, totalPrice);
+    }
 
 
     public void add(String name, int price){
         if (contains(name)) {
           return;
         }
-        items = items + "\n" + name + " - " + price;
+        if (totalPrice + price >= limit) {
+            return;
+        }
+            items = items + "\n" + name + " - " + price;
+
         totalPrice = totalPrice + price;
 
     }
