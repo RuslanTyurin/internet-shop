@@ -1,21 +1,9 @@
 public class Basket {
-    private static String items = "";
-    private static int totalPrice = 0;
+    private   String items = "";
+    private int totalPrice = 0;
 
-    public static void main(String[] args) {
-        add("Колбаса", 76);
-        add("Молоко", 110);
-        add("Масло", 115);
-        print("Содержимое корзины");
-        clear();
-        print("Содержимое корзины");
-        System.out.println(totalPrice);
-        int totalPrice = 15;
-        System.out.println(totalPrice);
 
-    }
-
-    public static void add(String name, int price){
+    public void add(String name, int price){
         if (contains(name)) {
           return;
         }
@@ -24,20 +12,20 @@ public class Basket {
 
     }
 
-    public static void clear(){
+    public void clear(){
         items = "";
         totalPrice = 0;
     }
 
-    public static int getTotalPrice(){
+    public int getTotalPrice(){
         return totalPrice;
     }
 
-    public static boolean contains(String name){
+    public boolean contains(String name){
         return items.contains(name);
     }
 
-    public static void print(String title){
+    public void print(String title){
         System.out.println(title);
         if (items.isEmpty()){
             System.out.println("Корзина пуста");
@@ -45,5 +33,8 @@ public class Basket {
             System.out.println(items);
         }
         System.out.println("Общая цена корзины: "+ getTotalPrice());
+        System.out.println();
+        System.out.println();
+
     }
 }
