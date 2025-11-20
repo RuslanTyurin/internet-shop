@@ -22,4 +22,13 @@ public class Product {
     public int getPrice(){
         return price;
     }
+
+    public String toString(){
+        return name + " -- " + price;
+    }
+
+    public  void print(){
+        String info = name + " - " + price;
+        System.out.println(info);
+    }
 }
